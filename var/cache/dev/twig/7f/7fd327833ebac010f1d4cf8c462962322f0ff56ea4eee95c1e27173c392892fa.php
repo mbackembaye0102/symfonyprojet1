@@ -64,28 +64,23 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
                     <a class=\"navbar-brand\" href=\"";
         // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("service");
-        echo "\">GEST-EMPLOYÉS</a>
+        echo "\">ACCUEIL</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                       <span class=\"navbar-toggler-icon\"></span>
                     </button>
                   
                     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
                       <ul class=\"navbar-nav mr-auto\">
-                        <li class=\"nav-item active\">
-                          <a class=\"nav-link\" href=\"";
-        // line 20
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("service");
-        echo "\">ACCUEIL <span class=\"sr-only\">(current)</span></a>
-                        </li>
+                       
                         <li class=\"nav-item\">
                           <a class=\"nav-link\" href=\"";
-        // line 23
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_service");
         echo "\">SERVICES</a>
                         </li>
                         <li class=\"nav-item\">
                           <a class=\"nav-link\" href=\"";
-        // line 26
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_employe");
         echo "\">EMPLOYES</a>
                         </li>
@@ -97,17 +92,17 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
                   <div class=\"container\">
                       <div class=\"container\">
                             ";
-        // line 35
+        // line 33
         $this->displayBlock('body', $context, $blocks);
-        // line 36
+        // line 34
         echo "                      </div>
 
                   </div>
         
         ";
-        // line 40
+        // line 38
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 41
+        // line 39
         echo "    </body>
 </html>
 ";
@@ -156,7 +151,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 35
+    // line 33
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -174,7 +169,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 40
+    // line 38
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -204,7 +199,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     public function getDebugInfo()
     {
-        return array (  178 => 40,  160 => 35,  142 => 7,  123 => 5,  111 => 41,  109 => 40,  103 => 36,  101 => 35,  89 => 26,  83 => 23,  77 => 20,  66 => 12,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  173 => 38,  155 => 33,  137 => 7,  118 => 5,  106 => 39,  104 => 38,  98 => 34,  96 => 33,  84 => 24,  78 => 21,  66 => 12,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -220,16 +215,14 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
     <body>
 
             <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-                    <a class=\"navbar-brand\" href=\"{{ path ('service')}}\">GEST-EMPLOYÉS</a>
+                    <a class=\"navbar-brand\" href=\"{{ path ('service')}}\">ACCUEIL</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                       <span class=\"navbar-toggler-icon\"></span>
                     </button>
                   
                     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
                       <ul class=\"navbar-nav mr-auto\">
-                        <li class=\"nav-item active\">
-                          <a class=\"nav-link\" href=\"{{ path ('service')}}\">ACCUEIL <span class=\"sr-only\">(current)</span></a>
-                        </li>
+                       
                         <li class=\"nav-item\">
                           <a class=\"nav-link\" href=\"{{ path ('create_service')}}\">SERVICES</a>
                         </li>
