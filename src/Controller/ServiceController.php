@@ -193,14 +193,14 @@ class ServiceController extends AbstractController
         /**
      * @Route("/service/{id}/lister", name="lister")
      */
-    public function lister(Service $service)
+    public function lister(Employe $employe , ObjectManager $manager)
     {
-        
-        $employeservice=$service->getEmploye();
+
+        $repo=$this->getDoctrine()->getRepository(Employe::class);
+        $employes=$repo->findByServie();
+      
               
-        return $this->render('service/lister.html.twig',[
-            'employeservice'=>$employeservice
-        ]);
+        return $this->render('service/lister.html.twig');
 
          
         }

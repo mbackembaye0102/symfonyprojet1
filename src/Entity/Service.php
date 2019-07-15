@@ -3,9 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ServiceRepository")
+  * @UniqueEntity("libelle", message="Ce nom de service  existe déjà")
+
  */
 class Service
 {
@@ -18,6 +22,8 @@ class Service
 
     /**
      * @ORM\Column(type="string", length=255)
+    * @Assert\NotBlank(message="Veuillez resnseigner ce champ")        
+
      */
     private $libelle;
 

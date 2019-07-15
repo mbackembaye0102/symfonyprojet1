@@ -22,6 +22,20 @@ class EmployeRepository extends ServiceEntityRepository
     // /**
     //  * @return Employe[] Returns an array of Employe objects
     //  */
+
+    
+    public function findByServie($value)
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.id = :val')
+            ->setParameter('val', $value)
+            ->orderBy('e.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
     /*
     public function findByExampleField($value)
     {
