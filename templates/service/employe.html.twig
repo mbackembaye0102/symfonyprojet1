@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EMPLOYE{% endblock %}
+{% form_theme formEmploye 'bootstrap_4_layout.html.twig' %}
+
+
+
+{% block body %}
+
+<br>
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+    {{ message }}
+
+</div> 
+{% endfor %}
+{% for message in app.flashes('danger') %}
+<div class="alert alert-danger">
+    {{ message }}
+
+</div> 
+{% endfor %}
+   <br>
+        <h1  align="center">GESTION DES EMPLOYES</h1>
+
+        <div class="container ">
+                {{form_start(formEmploye)}}
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                        {{form_row(formEmploye.matricule, {'attr':{'placeholder':"Matricule de l'Employé"}})}}
+
+                </div>
+                <div class="col-lg-4"></div>
+
+                <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                            {{form_row(formEmploye.nom, {'attr':{'placeholder':"Nom Complet de L'employé"}})}}
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                            {{form_row(formEmploye.datenaissance, {'attr':{'placeholder':"Date de Naissance"}})}}
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                            {{form_row(formEmploye.salaire, {'attr':{'placeholder':"Montant du Salaire"}})}}
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                            {{form_row(formEmploye.idService,  {'attr':{'placeholder':"Montant du Salaire"}})}}
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+
+                <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                            <button type="submit" class="btn btn-success">
+                           
+                            
+                                    {% if editEmploye %}
+                                    ENREGISTRER LES MODIFICATIONS
+                                    {% else %}
+                                    AJOUTER UN SERVICE
+                                    {% endif %}
+                 
+                                    </button>
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+
+            </div>
+                
+       
+            {{form_end(formEmploye)}}
+
+        </div>
+
+        <br>
+        <table class="table table-hover">
+                <thead >
+                  <tr>
+                    <th scope="col">ID EMPLOYE</th>
+                    <th scope="col">MATRICULE</th>
+                    <th scope="col">NOM COMPLET</th>
+                    <th scope="col">DATEN NAISSANCE</th>
+                    <th scope="col">SALAIRE</th>
+                    <th scope="col">SERVICE</th>
+                    <th scope="col">MODIFIER</th>
+                    <th scope="col">SUPPRIMER</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                {% for employe in employes %}
+                  
+                  <tr class="table-secondary">
+                    <th scope="row">{{employe.id}}</th>
+                    <td>{{employe.matricule}}</td>
+                    <td>{{employe.nom}}</td>
+                    <td>{{employe.datenaissance |date('d/m/Y')}}</td>
+                    <td>{{employe.salaire}} FCFA</td>
+                    <td>{{employe.idService.libelle}}</td>
+                    <td>
+                            <button class="btn btn-success">
+                            <a href="/service/{{employe.id}}/modifemploye">MODIFIER</a>                  
+                            </button>
+                        </td>
+                       
+                        <td>
+                                <button class="btn btn-danger" onclick="supprimer({{employe.id}})">
+                                        SUPPRIMER
+                                </button>
+                        </td>
+
+                    
+
+                  </tr>
+                
+              {% endfor %}
+                  
+                </tbody>
+              </table> 
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+<script>
+    function supprimer(id){
+        if (confirm("Voulez-vous vraiment supprimer cet Employé ?")){
+            document.location.href="/service/"+id+"/supemploye";
+        }
+    }
+</script>
+
+{% endblock %}

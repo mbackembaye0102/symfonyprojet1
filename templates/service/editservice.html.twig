@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SERVICE{% endblock %}
+
+{% form_theme formService 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+   <br>
+        <h1 >MODIFICATION SERVICES</h1>
+        <div class="cintainer ">
+                {{form_start(formService)}}
+            <div class="row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+                        {{form_row(formService.libelle, {'attr':{'placeholder':"Nom du Service"}})}}
+
+                </div>
+                <div class="col-lg-4"></div>
+
+                <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-4">
+                            <button type="submit" class="btn btn-success">AJOUTER</button>
+    
+                    </div>
+                    <div class="col-lg-4"></div>
+
+            </div>
+                
+
+       
+            {{form_end(formService)}}
+
+        </div>
+        
+       
+
+
+{% endblock %}
