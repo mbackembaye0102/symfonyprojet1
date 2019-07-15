@@ -86,7 +86,19 @@ class __TwigTemplate_bb83d39d7a52418830c561998cf817ff47020dac9531719eadd75dc61f3
 
         // line 8
         echo "   <br>
-        <h1 >BIENVENUE DANS LE GESTIONNAIRE DES EMPLOYÉS</h1>
+        <h1 id=\"titre\" >BIENVENUE DANS LE GESTIONNAIRE DES EMPLOYÉS</h1>
+
+        <style>
+                #titre{
+                        width : 100%;
+                        margin: 0 auto;
+                        position : justify;        
+                        padding : 40px;
+                }
+        
+        
+        
+        </style>
 
 ";
         
@@ -122,7 +134,19 @@ class __TwigTemplate_bb83d39d7a52418830c561998cf817ff47020dac9531719eadd75dc61f3
 
 {% block body %}
    <br>
-        <h1 >BIENVENUE DANS LE GESTIONNAIRE DES EMPLOYÉS</h1>
+        <h1 id=\"titre\" >BIENVENUE DANS LE GESTIONNAIRE DES EMPLOYÉS</h1>
+
+        <style>
+                #titre{
+                        width : 100%;
+                        margin: 0 auto;
+                        position : justify;        
+                        padding : 40px;
+                }
+        
+        
+        
+        </style>
 
 {% endblock %}
 ", "service/index.html.twig", "/home/mbacke/Documents/symfony/projet1/templates/service/index.html.twig");
